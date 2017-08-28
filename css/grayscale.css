@@ -97,7 +97,7 @@ a {
   display: table;
   width: 100%;
   height: auto;
-  padding: 200px 0;
+  padding: 50px 0;
   text-align: center;
   color: white;
   background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
@@ -111,6 +111,8 @@ a {
     vertical-align: middle; }
     .masthead .intro-body .brand-heading {
       font-size: 50px; }
+      .brand-heading {
+        padding: 50px;      }
     .masthead .intro-body .intro-text {
       font-size: 18px; }
   @media (min-width: 768px) {
