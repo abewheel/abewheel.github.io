@@ -42,8 +42,28 @@ var map = null;
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 google.maps.event.addDomListener(window, 'resize', function() {
-  map.setCenter(new google.maps.LatLng(40.6700, -73.9400));
+  map.setCenter(new google.maps.LatLng(34.0224, -118.2851));
 });
+
+function setContactText(button) {
+  var text = "";
+  if (button.href === "https://www.linkedin.com/in/abrahamwheeler/") {
+    text = "abrahamwheeler";
+  } else if (button.href === "https://github.com/abewheel") {
+    text = "abewheel";
+  } else if (button.href === "mailto:abe.wheeler3@gmail.com") {
+    text = "abe.wheeler3@gmail.com";
+  } else if (button.href === "https://abewheel.github.io/Abe_Wheeler_Resume.pdf") {
+    text = "Abe_Wheeler_Resume.pdf";
+  } else {
+    text - "<br>";
+  }
+  document.getElementById("contact-text").innerHTML = text;
+}
+
+function clearContactText(button) {
+  document.getElementById("contact-text").innerHTML = "<br>";
+}
 
 function init() {
   // Basic options for a simple Google Map
@@ -53,123 +73,12 @@ function init() {
     zoom: 15,
 
     // The latitude and longitude to center the map (always required)
-    center: new google.maps.LatLng(40.6700, -73.9400), // New York
+    center: new google.maps.LatLng(34.0224, -118.2851), // USC
 
     // Disables the default Google Maps UI components
     disableDefaultUI: true,
     scrollwheel: false,
     draggable: false,
-
-    // How you would like to style the map.
-    // This is where you would paste any style found on Snazzy Maps.
-    styles: [{
-      "featureType": "water",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 17
-      }]
-    }, {
-      "featureType": "landscape",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 20
-      }]
-    }, {
-      "featureType": "road.highway",
-      "elementType": "geometry.fill",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 17
-      }]
-    }, {
-      "featureType": "road.highway",
-      "elementType": "geometry.stroke",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 29
-      }, {
-        "weight": 0.2
-      }]
-    }, {
-      "featureType": "road.arterial",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 18
-      }]
-    }, {
-      "featureType": "road.local",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 16
-      }]
-    }, {
-      "featureType": "poi",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 21
-      }]
-    }, {
-      "elementType": "labels.text.stroke",
-      "stylers": [{
-        "visibility": "on"
-      }, {
-        "color": "#000000"
-      }, {
-        "lightness": 16
-      }]
-    }, {
-      "elementType": "labels.text.fill",
-      "stylers": [{
-        "saturation": 36
-      }, {
-        "color": "#000000"
-      }, {
-        "lightness": 40
-      }]
-    }, {
-      "elementType": "labels.icon",
-      "stylers": [{
-        "visibility": "off"
-      }]
-    }, {
-      "featureType": "transit",
-      "elementType": "geometry",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 19
-      }]
-    }, {
-      "featureType": "administrative",
-      "elementType": "geometry.fill",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 20
-      }]
-    }, {
-      "featureType": "administrative",
-      "elementType": "geometry.stroke",
-      "stylers": [{
-        "color": "#000000"
-      }, {
-        "lightness": 17
-      }, {
-        "weight": 1.2
-      }]
-    }]
   };
 
   // Get the HTML DOM element that will contain your map
@@ -187,4 +96,22 @@ function init() {
     map: map,
     icon: image
   });
+
+  // Greet user by time of day
+  var greeting = "";
+  var now = new Date();
+  var hour = now.getHours();
+  if (hour >= 4 && hour < 12) {
+    greeting = "Good morning";
+  } else if (hour >= 12 && hour < 17) {
+    greeting = "Good afternoon";
+  } else if (hour >= 17 && hour < 20) {
+    greeting = "Good evening";
+  } else if (hour >= 20 || hour < 4) {
+    greeting = "Good night";
+  } else {
+    greeting = "Hi";
+  }
+  var greetingHeader = document.getElementById("greeting");
+  greetingHeader.innerHTML = greeting + ", I'm Abe Wheeler";
 }
