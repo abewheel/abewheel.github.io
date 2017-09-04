@@ -1,5 +1,5 @@
-# abewheel.github.io
-This is my resume website, [check it out!](https://abewheel.github.io)
+# [abewheel.github.io](https://abewheel.github.io)
+This is my resume website.
 Began with the following template:
 
 ## [Start Bootstrap - Grayscale](https://startbootstrap.com/template-overviews/grayscale/)
