@@ -1,8 +1,8 @@
 #abewheel.github.io
-This is my website, [check it out!](abewheel.github.io)
+This is my resume website, [check it out!](https://abewheel.github.io)
 Began with the following template:
 
-# [Start Bootstrap - Grayscale](https://startbootstrap.com/template-overviews/grayscale/)
+## [Start Bootstrap - Grayscale](https://startbootstrap.com/template-overviews/grayscale/)
 
 [Grayscale](http://startbootstrap.com/template-overviews/grayscale/) is a multipurpose, one page HTML theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
 
