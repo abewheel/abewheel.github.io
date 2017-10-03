@@ -366,8 +366,8 @@ p {
 .mugshot {
   border-radius: 50%;
   height: 200px;
-  margin-right: 50px;
   width: 200px;
+  margin: 0 auto;
 }
 
 #map {
